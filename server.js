@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser()); 
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://ecommerce-frontend.onrender.com'] 
+    ? ['https://ecom-fron-rcogpr7so-ashwanirajput18000-1184s-projects.vercel.app'] 
     : ['http://localhost:3000'],
   credentials: true
 }))
@@ -42,17 +42,10 @@ app.get('/', (req, res) => {
   });
 });
 
-// Health check route for Render
-app.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'OK',
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime()
-  });
-});
+
 
 // Start server
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running at port ${PORT}`);
 });
