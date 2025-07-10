@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser()); 
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://ecom-fron-git-main-ashwanirajput18000-1184s-projects.vercel.app/'] 
+    ? ['https://ecom-fron-eta.vercel.app'] 
     : ['http://localhost:3000'],
   credentials: true
 }))
