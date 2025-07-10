@@ -16,7 +16,12 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cookieParser()); 
-app.use(cors())
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://ecommerce-frontend.onrender.com'] 
+    : ['http://localhost:3000'],
+  credentials: true
+}))
 
 // Connect to DB
 connectDB();
