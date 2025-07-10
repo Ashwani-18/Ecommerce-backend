@@ -31,4 +31,8 @@ services:
       - key: REACT_APP_API_URL
         value: https://ecommerce-backend.onrender.com
       - key: REACT_APP_RAZORPAY_KEY_ID
-        sync: false 
+        sync: false
+    headers:
+      - path: /static/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable 
